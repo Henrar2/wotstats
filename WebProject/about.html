@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<head>
+<!--Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Ubuntu Font -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+<style>
+*{
+  margin:0;
+  padding:0;
+}
+
+main{
+  height: 100%;
+  background: radial-gradient(#34568B,#8098b4 );
+  display: flex;
+  flex-direction: row;
+}
+
+main .spacer{
+  width:9rem;
+  height: 100vh;
+  background-color: transparent;
+  transition: 500ms;
+}
+
+.table{
+  color: gainsboro;
+  width: 50%;
+  text-shadow: 1px 1px 2px black;
+  margin: 2rem;
+  border: 2px solid silver;
+  border-spacing: 0px;
+}
+.trow{
+  background:transparent;
+  height:auto;
+  width: auto;
+  font-size:x-large;
+  text-align: left;
+  text-shadow: 0 0 4px black;
+  color:whitesmoke;
+  font-family: 'Times New Roman', Times, serif;
+}
+.theading,.tdata{
+  font-family: 'Ubuntu','sans-serif';
+  padding-left: 1rem;
+  border: 1px solid silver;
+  padding:1rem 1rem 1rem 1rem;
+}
+
+main #spacer2{
+  right:0;
+}
+
+main #container{
+  width:80%;
+}
+
+#myimg{
+  border-radius: 50%;
+  border:2px solid transparent;
+  background-color: rgba(255, 255, 255, 0);
+  width: 6rem;
+  height: 6rem;
+  margin-bottom: 80px;
+  margin-right: auto;
+  margin-left:auto;
+  transition:500ms;
+}
+#navigation:hover img{
+  display: block;
+  width: 12rem;
+  height: 12rem;
+  margin-bottom: 3rem;
+  margin-right: auto;
+  margin-left:auto;
+  text-align: center;
+  box-shadow: 0 0 1rem 0 white;
+  transition:500ms;
+}
+
+#navigation:hover{
+  width: 12rem;
+  height:100%;
+  transition: 500ms;
+  min-width: 12rem;
+}
+#navigation{
+  position: fixed;
+  float:left;
+  background-color: rgb(132, 167, 207);
+  width: 6rem;
+  min-width: 6rem;
+  height: 100%;
+  box-shadow: 5px 5px 15px black;
+  transition: 500ms;  
+}
+#navigation a{
+  display: block;
+  min-block-size: 15px;
+  background-color: rgb(132, 167, 207);
+  margin-bottom: 50px;
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 25px 0 25px 0;
+  text-align: center;
+  transition: 500ms;
+}
+#navigation a:hover{
+  font-size:larger;
+  box-shadow: 0 0 10px #000000;
+
+}
+#navigation a:focus{
+  box-shadow: inset 0 0 10px #000000;
+}
+.navbar a i{
+  font-size: 30px;
+}
+.navbar a:hover #homebtn{
+  color:rgb(66,103,178);
+  transition:500ms;
+}
+.navbar a:hover #contanctbtn{
+  color:rgb(66,103,178);
+  transition:500ms;
+}
+#socialnav a{
+  width: 48%;
+  height: 48%;
+  height: auto;
+  margin: auto;
+}
+.socialnav{
+  display: flex;
+  height: 10%;
+  width: auto;
+}
+.socialnav a i{
+  font-size: 25px;
+  /* color: rgb(66,103,178);  FACEBOOK COLOR*/
+  color:white;
+  margin: auto;
+  padding: auto;
+}
+.socialnav a:hover i{
+  color: rgb(66,103,178);
+  transition:500ms;
+}
+#container .heading{
+  text-align:left;
+  margin-top: 1rem;
+  text-shadow: 1px 1px 2px black;
+  padding:3px;
+  color:whitesmoke;
+  background-color: rgba(192, 192, 192, 0);
+  border-bottom: 1px solid silver;
+  font-family: 'Ubuntu','sans-serif';
+  font-size: 2rem;
+}
+#container .content{
+  color: gainsboro;
+  width: 75%;
+  text-shadow: 1px 1px 2px black;
+  overflow-wrap: break-word;
+  background-color: rgba(132, 167, 207,0.1);
+  border: 2px solid silver;
+  font-size: 2rem;
+  font-weight: 500;
+  font-family:'Times New Roman', Times, serif;
+  text-align: justify;
+  padding: 50px 50px 50px 50px;
+  margin: 20px;
+  text-indent: 25px;
+}
+#navigation:hover ~ main #spacer1{
+  width:15rem;
+  transition:500ms;
+}
+
+</style>
+<script src="js/about.js"></script>
+</head>
+<body>
+  
+<nav id="navigation" class="navbar">
+  <img id="myimg" src="./imgs/stewe.png">
+  <a href="index.html"><i id="homebtn" class="fa fa-home"></i></a>
+  <a href="#" onclick="about()"><i id="contanctbtn"class="fa fa-phone"></i></a>
+  
+  <nav id="socialnav" class="socialnav">
+    <a href="https://www.facebook.com/kwstas.thal" target="_blank"><i class="fa fa-facebook-square"></i></a>
+    <a href="https://www.facebook.com/kwstas.thal" target="_blank"><i class="fa fa-twitter-square"></i></a>
+  </nav>
+</nav>
+<main>
+  <div id="spacer1" class="spacer">
+    <!-- This goes left side of container as spacer-->
+  </div>
+  <div id="container" class="desc">
+    <h1 id="heading" class="heading">About Me</h1>
+    <p id="content1" class="content">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+  </div>
+  <div id="spacer2" class="spacer">
+    <!-- This goes left side of container as spacer -->
+  </div>
+</main>
+</body>
+</html>

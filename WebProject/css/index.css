@@ -1,0 +1,295 @@
+body{
+  margin: 0;
+  padding: 0;
+  background:radial-gradient(#bdc3c7,#2c3e50);
+  margin:auto;
+  min-height: 100vh;
+}
+main{
+  min-height: 70vh;
+  width:100%;
+}
+#sidebar{
+  border:1px solid silver;
+  width:24%;
+  height: 25vh;
+  float: right;
+  border-collapse: collapse;
+}
+#content{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border:1px solid silver;
+  float: left;
+  width:75%;
+  height: 50vh;
+  border-collapse: collapse;
+}
+#content h1{
+  border: 1px solid silver;
+  border-collapse: collapse;
+}
+description p{
+  width:50%;
+  margin:auto;
+  text-align:center;
+
+}
+
+.banner{
+  text-align: center;
+  background-color: rgba(128, 128, 128, 0.20);;
+  color:white;
+  box-shadow: black;
+  box-sizing: border-box;
+  border:2px solid silver;
+  border-radius: 55px;
+  width: 50%;
+  margin: auto;
+  margin-top:30px;
+  padding-top: 30px;
+  height: max-content;
+}
+
+#form{
+  text-align: center;
+  padding-top:30px;
+  margin: auto;
+}
+
+#subbutton{
+  background: #2c3e50;
+  color: white;
+  border: 2px solid white;
+  border-radius: 12px;
+  outline:0px;
+  width:80px;
+  height:35px;
+}
+#subbutton:focus{
+  background: white;
+  color: #2c3e50;
+  border: 2px solid #2c3e50;
+  transition: 800ms;
+}
+#search{
+  border-radius: 12px;
+  width:150px;
+  height:35px;
+  outline:0px;
+  border:2px #2c3e50 solid;
+
+}
+
+#search:hover,#search:focus{
+  box-shadow: 0 0 3vh 0 whitesmoke;
+  transition: 1200ms;
+}
+
+#date{
+  float: right;
+  margin-right: 3px;
+  color: aliceblue;
+}
+
+footer{
+  display: block;
+  color:white;
+  background-color: #333;
+  text-align: center;
+  min-height: 30vh;
+  width:100%;
+  position: relative;
+  bottom: 0;
+}
+.frs{
+  float:left;
+}
+.frs i{
+  float:left;
+  margin:1rem 1rem 0 1rem;
+}
+.frs p{
+  margin:1rem 0 0 0;
+  float:left;
+}
+header{
+  min-height: 15vh;
+  margin:0px;
+  padding:0px;
+}
+
+   /* **************************************** NAVINGATION BAR START *************************************** */
+.topnav{
+  background-color:#2125297e;
+  overflow:hidden;
+  transition: 500ms;
+}
+
+.topnav:hover{
+  background-color:  #212529;
+  transition: 500ms;
+}
+
+.topnav a{
+  display: block;
+  float:left;
+  text-align: center;
+  color:white;
+  padding:20px 20px;
+  font-size: 20px;
+  transition: 500ms;
+  border:2px solid transparent;
+  text-decoration: none;
+}
+
+.topnav a:not(:first-child){
+  float:right;
+}
+
+.topnav a:hover{
+  background-color: rgba(128, 128, 128, 0.20);
+  transition: 500ms;
+}
+
+.topnav .active {
+  background-color: rgba(128, 128, 128, 0.20);
+
+}
+
+.topnav a.icon{
+  display: none;
+}
+
+@media screen and (max-width:600px){
+  .topnav a:not(:first-child){
+    display: none;
+  }
+  .topnav a.icon{
+    float: right;
+    display:block;
+  }
+}
+@media screen and (max-width:600px){
+  .topnav{
+    position: relative;
+  }
+  .topnav a{
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav a.icon{
+    position: absolute;
+    right: 0;
+    top: 0; 
+  }
+}
+
+#tableHead{
+  width:100%;
+  margin-bottom: 120px;
+  margin-top: 60px;
+  border:2px black solid;
+  background-color: #2c3e50;
+}
+#tableHead tr th{
+  font-size: 20px;
+  font-weight: 700;
+  background:#2c3e50;  
+  color:#ebf0f3;
+  width: 100vw;
+  font-style: arial;
+  border-bottom: 2px solid black;
+}
+/* #tableHead th:hover{
+  font-size: 20px;
+  background-color: steelblue;
+  border:1px;
+  width: fit-content;
+  font-style: inherit;
+} */
+#tableHead tr td{
+  font-size: 20px;
+  font-style:inherit;
+  width:100vw;
+
+}
+#tableHead .data{
+    background:rgba(250, 248, 248,80%);
+    color:black;
+}
+#tableHead .data:nth-child(even){
+  background:rgba(128, 128, 128, 0.20); 
+  color:white;
+}
+
+#tableHead .data:hover{
+  color: black;
+  font-weight: 700;
+  text-shadow: 0 0 3vh whitesmoke;
+}
+#tableHead .data:hover:nth-child(even){
+  color:white;
+  font-weight: 700;
+  text-shadow:0 0 3vh black;
+}
+
+#inputfield,#sumbit{
+  text-align: center;
+  outline: 0px;
+  border-radius: 10px;
+  width: 100px;
+  right:0px;
+  transition: 0.5s;
+  
+}
+
+#inputfield:focus{
+  width:250px;
+  right:0;
+  transition: .5s;
+  color:black;
+  border:2px solid blueviolet;
+}
+
+.loading{
+  margin: auto;
+  padding: auto;
+  width: 6vw;
+  height: 6vw;
+  background: transparent;
+  border-radius: 50%;
+  animation: load .4s infinite;
+}
+
+.loading p{
+  text-align: center;
+  padding-top:27px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  color:white;
+  text-shadow: 2px 2px 2px black;
+
+}
+@keyframes load{
+  0%{
+    box-shadow: -2px -2px 0px 0px black;
+  }
+  25%{
+    box-shadow: 2px -2px 0px 0px black;
+  }
+  50%{
+    box-shadow: 2px 2px 0px 0px black;
+  }
+  75%{
+   box-shadow: -2px 2px 0px 0px black;
+  }
+  100%{
+   box-shadow: -2px -2px 0px 0px black;
+  }
+}
+
+
+
+ /* **************************************** NAVINGATION BAR END **************************************** */
+

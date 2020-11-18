@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script> <!--JQuery for navbar universal-->
+  <script src="js/nav.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <Title>WebApp Ece-Uop</Title>
+</head>
+
+<header>
+            <!-- Navigation Bar -->
+  <nav>
+    <div id="navbar" class="topnav">
+      <a href="index.html" class="active">World Of Tanks</a>
+      <a href="about.html">About</a>
+      <a href="javascript:void(0);" class="icon" onclick="nav()">
+        <i class="fa fa-bars"></i>
+      </a>
+  </nav>
+</header>
+<body>
+  <main>
+    <div id="form">
+      <input type="text" placeholder="Search user.." id="search">
+      <button type="submit" id="subbutton" onclick=check()>Submit</button>
+    </div>
+    <table id="tableHead" style="text-align: center;">
+    </table>
+  </main>
+</body>
+<footer>
+  <div class="frs">
+    <h1>Donate</h1>
+    <i class="fa fa-btc" aria-hidden="true" style="color:white"></i>
+    <p>btc address goes here</p>
+  </div>
+</footer>
+
+    <!-- API LOAD  -->
+
+  <script>
+  function check(){
+    var c = document.getElementById("search").value;
+      if(c.length <= 2){
+        alert(`"${c}" is not a valid username\nUsername must be at least 3 characters long`);
+      }
+      else{
+        start();
+      }
+  }
+
+    function start(){
+    isLoading=true;
+    document.getElementById("tableHead").innerHTML='<div class="loading"><p><p></span>';
+    var username = document.getElementById("search").value;
+    var xmlhttp = new XMLHttpRequest();
+    var url = "https://api.worldoftanks.eu/wot/account/list/?application_id=a09f6a40597e0735d4bce02b167c66a9&search="+username;
+    xmlhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200) {
+            var list = JSON.parse(this.responseText);
+                console.log(list);
+                display(list);
+                }
+    }
+    xmlhttp.open("GET",url,true);
+    xmlhttp.getAllResponseHeaders;
+    xmlhttp.send();
+    }
+
+    function user(id){
+      isLoading = true;
+      document.getElementById("tableHead").innerHTML='<div class="loading"><p><p></span>';
+      console.log(id);
+      var xmlhttp = new XMLHttpRequest();
+      var url = "https://api.worldoftanks.eu/wot/account/info/?application_id=a09f6a40597e0735d4bce02b167c66a9&account_id="+id;
+      xmlhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200){
+          var list = JSON.parse(this.responseText);
+          console.log(list);
+          displayUser(list,id);
+        }
+      }
+      xmlhttp.open("GET",url,true);
+      xmlhttp.getAllResponseHeaders;
+      xmlhttp.send();
+    }
+
+    function displayUser(list,id){
+      isLoading = false;
+      console.log(id);
+      var nickname = list.data[id].nickname;
+      var battles = list.data[id].statistics.all.battles;
+      var wins = list.data[id].statistics.all.wins;
+      var winRatio = (wins/battles)*100;
+      winRatio = winRatio.toFixed(2);
+      var out = ' <table id="tableHead"><th>Username</th><th>Battles</th><th>Victories</th><th>Win Ratio %</th></table>' ;
+        out+= '<tr class="data"><td>'+nickname+'</td><td>'+battles+'</td><td>'+wins+'</td><td>'+winRatio+'</td></tr>';
+        document.getElementById("tableHead").innerHTML = out;
+    }
+
+    function display(list){
+      isLoading=false;
+        var out = ' <table id="tableHead"><th>Username</th><th>Account Id</th></table>' ;
+        var i;
+        
+        for(i=0;i<list.data.length;i++){
+            var id = list.data[i].account_id;
+            out+='<tr class="data" onclick="user('+id+')"><td>'+list.data[i].nickname+'</td>'+'<td>'+id+'</td></tr>'; 
+           // this.document.write(list.data.length+'<br>'+list.data[i].nickname+list.data[i].account_id)  //returns Nickname account_id
+        }
+        document.getElementById("tableHead").innerHTML=out; //Needs to Change
+    }
+    
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+  <head>
+  <!-- Styling -->
+    <style>
+      #table{
+        border:2px solid black;
+        margin:auto;
+      }
+      .mytr{
+        border: 2px solid black;
+      }
+
+      .loading{
+  margin: auto;
+  padding: auto;
+  width: 6vw;
+  height: 6vw;
+  background: transparent;
+  border-radius: 50%;
+  animation: load .5s infinite;
+}
+
+.loading p{
+  text-align: center;
+  padding-top:27px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  color:white;
+  text-shadow: 2px 2px 2px black;
+
+}
+@media screen and (max-width:600px){
+  body{
+    background-color: red;
+  };
+}
+@keyframes load{
+  0%{
+    box-shadow: -2px -2px 0px 0px #db0000;
+  }
+  25%{
+    box-shadow: 2px -2px 0px 0px #db0000;
+  }
+  50%{
+    box-shadow: 2px 2px 0px 0px #db0000;
+  }
+  75%{
+   box-shadow: -2px 2px 0px 0px #db0000;
+  }
+  100%{
+   box-shadow: -2px -2px 0px 0px #db0000;
+  }
+}
+</style>
+
+  </head>
+    <body>
+      <main>
+        <div id="random" class="loading"><p></p></div>
+      </main>
+    </body>
+</html>
