@@ -1,21 +1,13 @@
-//Used in Old toString() method to print content1.innerHTML = toString();
-var fname= "Kostas";
-var lname =  "Thalassinos";
-var date= "28/07/1992";
-var residence= "Patras,Greece";
-var phoneNum= "+306980930428";
-var military= "Fulfilled";
-
-//Object for userinfo **Pointless but it demonstrates I can handle objects**
+//Object for userinfo **Pointless but it demonstrates the list idea**
 var user = [
-    Name= "Kostas Thalassinos",
+    Name= "King Arthur",
     Born= "28/07/1992",
-    Residence= "Patras,Greece",
+    Residence= "Somewhere, Greece",
     Phone= "+30 6900000009",
     military= "Fulfilled",
 ];
 
-//This object is made to print the heading >> headings[i]: user[i] >> Name: Kostas Thalassinos || Born: 28/07/1992 etc
+//This object is made to print the heading >> headings[i]: user[i] >> Name: King Arthur || Born: 28/07/1992 etc
 var headings = [
     Name= "Name: ",
     Born= "Born: ",
@@ -64,8 +56,17 @@ function about(){
         document.getElementById(`td${i}`).textContent = user[i];
     }
 }
-//Old Method 
-//
+
+// Other Method *Just for Demonstration*
+
+//Used in Old toString() method to print content1.innerHTML = toString();
+var fname= "King";
+var lname =  "Arthur";
+var date= "28/07/1992";
+var residence= "Somewhere, Greece";
+var phoneNum= "+30 6900000009";
+var military= "Fulfilled";
+
 function toString(){
     return(
         
