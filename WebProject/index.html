@@ -13,7 +13,9 @@
   <script src="./js/wot.js"></script>
   <Title>WebApp Ece-Uop</Title>
 </head>
+<style>
 
+</style>
 <header>
             <!-- Navigation Bar -->
   <nav>
@@ -28,8 +30,13 @@
 <body>
   <main>
     <div id="form">
+      <h1 id="mainheading">Search For a User</h1>
       <input type="text" placeholder="Search user.." id="search">
       <button type="submit" id="subbutton" onclick=check()>Submit</button>
+      <div id="alert" class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>Success!</strong> Select a user for more info
+      </div>
     </div>
     <table id="tableHead" style="text-align: center;">
     </table>
