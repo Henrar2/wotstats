@@ -27,7 +27,7 @@ function check(){
     xmlhttp.send();
     }
   
-  //2nd Api Load for user with id
+  //2nd Api Load >> Search for user by his id
     function user(id){
       isLoading = true;
       document.getElementById("tableHead").innerHTML='<div class="loading"><p><p></span>';
