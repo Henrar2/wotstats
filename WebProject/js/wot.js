@@ -63,6 +63,8 @@ function check(){
     //Display all users with 
     function display(list){
       isLoading=false;
+        //Diplay alert box
+        document.getElementById("alert").style.display = "block";
         var out = ' <table id="tableHead"><th>Username</th><th>Account Id</th></table>' ;
         var i;
         for(i=0;i<list.data.length;i++){
