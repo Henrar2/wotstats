@@ -1,7 +1,15 @@
 function check(){
     var c = document.getElementById("search").value;
+    var alert = document.getElementsByClassName("alert");
+    var alert = alert[0];
+    var alerttext = document.getElementById("alerttext");
       if(c.length <= 2){
-        alert(`"${c}" is not a valid username\nUsername must be at least 3 characters long`);
+        alerttext.innerText = `Username must be at least 3 characters long`;
+        alert.style.background = "#f44336";
+        alert.style.animation = "show 5000ms"
+        alert.style.display = "block";
+        alert.style.right = "0";
+        return ;
       }
       else{
         start();
@@ -64,7 +72,7 @@ function check(){
     function display(list){
       isLoading=false;
         //Diplay alert box
-        document.getElementById("alert").style.display = "block";
+
         var out = ' <table id="tableHead"><th>Username</th><th>Account Id</th></table>' ;
         var i;
         for(i=0;i<list.data.length;i++){
@@ -72,4 +80,12 @@ function check(){
           out+='<tr class="data" onclick="user('+id+')"><td>'+list.data[i].nickname+'</td>'+'<td>'+id+'</td></tr>'; 
         }
         document.getElementById("tableHead").innerHTML = out;
+
+        var alert = document.getElementsByClassName("alert");
+        var alert = alert[0];
+        alerttext.innerText= "Select a user for more info";
+        alert.style.background = "#4CAF50"
+        alert.style.animation = "show 5000ms"
+        alert.style.display = "block";
+        alert.style.right = "0";
     }  
