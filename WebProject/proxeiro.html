@@ -1,62 +1,178 @@
 <!DOCTYPE html>
-  <head>
-  <!-- Styling -->
-    <style>
-      #table{
-        border:2px solid black;
-        margin:auto;
-      }
-      .mytr{
-        border: 2px solid black;
-      }
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+ <style>
+   *{
+    margin:5px;
+    padding:5px;
+   }
+   body{
+    margin: 0;
+    padding: 0;
+   }
+   h1,h2,h3,h4,h5,h6,p{
+    font-family: "Roboto", sans-serif;
+    color: #757575;
+   }
+    i{
+    color:#2565AE; 
+   }
+   .details p{
+    color: #757575
+   }
+   .grid-container{ 
+     display: grid;
+     gap:1em 1em;
+     grid-template-columns: 1fr 2fr;
+     grid-template-rows: 2fr 1fr;
+     grid-template-areas: 
+     "info main"
+     "info main"
+     "foot foot";
+   }
+   .info{
+    background:transparent;
+    grid-area:info;
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+   }
+   .avatar{
+    display: block;;
+    position: relative;
+    background-color: white;
 
-      .loading{
-  margin: auto;
-  padding: auto;
-  width: 6vw;
-  height: 6vw;
-  background: transparent;
-  border-radius: 50%;
-  animation: load .5s infinite;
-}
+   }
+   .avatar img{
+     width: 100%;
+     height: 100%;
 
-.loading p{
-  text-align: center;
-  padding-top:27px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 20px;
-  color:white;
-  text-shadow: 2px 2px 2px black;
+   }
+   .avatar .h{
+     position: absolute;
+   }
+   .details{
+    display: flow-root;
+   }
+   .skills{
+    display: flow-root;
+    border-top:1px solid silver;
+    color:#757575;
+   }
+   .bar{
+     text-align: center;
+     border-radius:21px;
+     background-color: silver;
+     width:99%;
+     height:auto;
+     margin: 0;
+     padding: 0;
+   }
+   .bar .fill{
+    margin:0;
+    padding:0;
+    background-color:#2565AE;
+    border-radius: 21px;
+    text-align: center;
+    width:90%;
+    color:whitesmoke;
+   }
+   .css .fill{
+     width:80%;
+   }
+   .javascript .fill{
+    width:70%;
+   }
+   .greek .fill{
+     width:100%;
+   }
+   .english .fill{
+     width:90%;
+   }
+   .main{
+    background: whitesmoke;
+    grid-area:main;
+   }
+   .education h1{
+    border-bottom: 1px solid silver;
+   }
+   .foot{
+    width:100%;
+    background:#2565AE;
+    grid-area:foot;
+    text-align: center;
+    color: white;
+   }
+   .foot p{
+     color:white;
+   }
+   .foot i{
+     font-size: 2em;
+     margin: 0 1em 0 1em;
+     color: white;
+   }
 
-}
-@media screen and (max-width:600px){
-  body{
-    background-color: red;
-  };
-}
-@keyframes load{
-  0%{
-    box-shadow: -2px -2px 0px 0px #db0000;
-  }
-  25%{
-    box-shadow: 2px -2px 0px 0px #db0000;
-  }
-  50%{
-    box-shadow: 2px 2px 0px 0px #db0000;
-  }
-  75%{
-   box-shadow: -2px 2px 0px 0px #db0000;
-  }
-  100%{
-   box-shadow: -2px -2px 0px 0px #db0000;
-  }
-}
-</style>
 
-  </head>
-    <body>
-      <main>
-        <div id="random" class="loading"><p></p></div>
-      </main>
-    </body>
+
+ </style>
+</head>
+<body>
+  <!-- Container -->
+<div class="grid-container">
+
+  <!-- Info -->
+  <div class="info">
+    <div class="avatar">
+
+    </div>
+    <div class="details">
+      <p><i class="fas fa-briefcase"></i>Frontend Developer</p>
+      <p><i class="fas fa-map-marker-alt"></i>Patras,Western Greece</p>
+      <p><i class="fas fa-envelope"></i>kwstasftw@yahoo.gr</p>
+      <p><i class="fas fa-phone"></i>+30 6980930428</p>
+    </div> 
+    <div class="skills">
+      <h3><i class="fas fa-code"></i>Digital Skills</h3>
+      <div class="item">
+        <p>HTML</p><div class="bar html"><div class="fill">90%</div></div>
+      </div>
+      <div class="item">
+        <p>CSS</p><div class="bar css"><div class="fill">80%</div></div>
+      </div>
+      <div class="item">
+        <p>Javascript</p><div class="bar javascript"><div class="fill">70%</div></div>
+      </div>
+    </div>
+    <div class="languages skills">
+      <h3><i class="fas fa-globe-americas"></i>Languages</h3>
+      <div class="item">
+        <p>Greek</p><div class="bar greek"><div class="fill">100%</div></div>
+      </div>
+      <div class="item">
+        <p>English</p><div class="bar english"><div class="fill">90%</div></div>
+      </div>
+    </div>
+
+</div>
+
+
+  <!-- Main -->
+  <div class="main">
+    <div class="education">
+      <h1><i class="fas fa-briefcase"></i>Work Experience</h1>
+    </div>
+
+  </div>
+
+  <!-- foot -->
+  <div class="foot">
+    <p>Find me on </p>
+    <i class="fab fa-facebook"></i>
+    <i class="fab fa-github"></i>
+    <i class="fab fa-free-code-camp"></i>
+    <p>Thanks for reading</p>
+  </div>
+</div>
+</body>
 </html>
