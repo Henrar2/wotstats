@@ -60,10 +60,10 @@
    }
    .details{
     display: flow-root;
+    border-bottom: 1px solid silver;
    }
    .skills{
     display: flow-root;
-    border-top:1px solid silver;
     color:#757575;
    }
    .bar{
@@ -104,9 +104,10 @@
      margin-bottom: 1rem;
      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
    }
-   .content .item{
-    border-bottom: 1px solid silver;
+   .content .item:not(:first-of-type){
+    border-top: 1px solid silver;
    }
+   
    .date{
     display: flex;
     color:#2565AE;
