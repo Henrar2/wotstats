@@ -68,7 +68,7 @@ function check(){
         document.getElementById("tableHead").innerHTML = out;
     }
 
-    //Display all users with 
+    //Display all users 
     function display(list){
       isLoading=false;
         //Diplay alert box
@@ -77,7 +77,7 @@ function check(){
         var i;
         for(i=0;i<list.data.length;i++){
           var id = list.data[i].account_id;
-          out+='<tr class="data" onclick="user('+id+')"><td>'+list.data[i].nickname+'</td>'+'<td>'+id+'</td></tr>'; 
+          out+='<tr class="data"><td>'+list.data[i].nickname+'</td>'+'<td>'+id+'</td><td><button type="button" id="player" onclick="user('+id+')"><i class="fa fa-info"></i></button></td></tr>'; 
         }
         document.getElementById("tableHead").innerHTML = out;
 
