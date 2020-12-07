@@ -9,7 +9,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script> <!--JQuery for navbar universal-->
   <script src="./js/nav.js"></script>
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
   <script src="./js/wot.js"></script>
@@ -40,6 +42,15 @@
         <i class="fa fa-bullhorn" style="margin:0 3px 0 0;"></i><p id="alerttext" style="float: right;">Select a user for more info</p>
       </div>
     </div>
+    <!-- Add Event Listener on Enter key press if Search field is selected and not empty -->
+    <script>
+      document.getElementById("search").addEventListener("keypress",function(event){
+        if(event.keyCode === 13){
+          event.preventDefault();
+          document.getElementById("subbutton").click();
+        }
+      })
+    </script>
     <table id="tableHead" style="text-align: center;">
     </table>
   </main>
