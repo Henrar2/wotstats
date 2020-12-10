@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+  <meta name="viewport" content="width=device-width,initial-scale=1"> 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
  <style>
@@ -26,12 +27,25 @@
      display: grid;
      gap:1em 1em;
      grid-template-columns: 1fr 2fr;
-     grid-template-rows: 2fr 1fr;
+     grid-template-rows: 1fr 1fr;
      grid-template-areas: 
      "info main"
      "info main"
      "foot foot";
    }
+  @media only screen and (max-width: 600px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.4fr 1fr 0.1fr;
+      grid-template-areas: 
+      "info"
+      "main"
+      "foot";
+      
+    }
+  }
+   
    .info{
     grid-area:info;
     background-color: white;
